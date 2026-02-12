@@ -6,12 +6,13 @@
   html {
     scroll-behavior: smooth;
     -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
   }
   body {
     @apply bg-background text-text-primary;
   }
   ::selection {
-    background: rgba(30, 58, 95, 0.15);
-    color: #1a1a2e;
+    background: rgba(201, 168, 124, 0.25);
+    color: #e8e6e1;
   }
 }

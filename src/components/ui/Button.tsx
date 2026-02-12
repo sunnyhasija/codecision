@@ -11,9 +11,9 @@ interface ButtonProps {
 
 const variants = {
   primary:
-    "bg-accent hover:bg-accent-hover text-white",
+    "bg-accent/90 hover:bg-accent text-background font-medium",
   secondary:
-    "border border-border hover:border-text-muted text-text-primary",
+    "border border-border hover:border-text-muted text-text-secondary hover:text-text-primary",
 };
 
 export function Button({
@@ -23,11 +23,16 @@ export function Button({
   children,
   className = "",
 }: ButtonProps) {
-  const classes = `inline-flex items-center justify-center px-7 py-3 text-sm font-medium tracking-wide rounded transition-all duration-200 ${variants[variant]} ${className}`;
+  const classes = `inline-flex items-center justify-center px-7 py-3.5 text-[13px] tracking-wide rounded transition-all duration-300 ${variants[variant]} ${className}`;
 
   if (href && external) {
     return (
-      <a href={href} target="_blank" rel="noopener noreferrer" className={classes}>
+      <a
+        href={href}
+        target="_blank"
+        rel="noopener noreferrer"
+        className={classes}
+      >
         {children}
       </a>
     );
@@ -41,7 +46,5 @@ export function Button({
     );
   }
 
-  return (
-    <button className={classes}>{children}</button>
-  );
+  return <button className={classes}>{children}</button>;
 }

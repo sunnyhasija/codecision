@@ -14,28 +14,29 @@ export default function ContactPage() {
     <div className="pt-40 pb-24 md:pt-48 md:pb-32">
       <div className="mx-auto max-w-content px-6 lg:px-8">
         <AnimateIn>
-          <p className="text-base text-text-secondary max-w-prose leading-[1.8]">
-            If your organization is evaluating AI in decision-intensive
-            environments, begin with a structured conversation.
+          <p className="text-[10px] uppercase tracking-[0.25em] text-accent mb-8">
+            Contact
           </p>
+          <h1 className="font-serif text-display-sm text-text-primary max-w-lg">
+            Start with a conversation.
+          </h1>
         </AnimateIn>
 
         <AnimateIn delay={0.1}>
-          <div className="mt-12 flex flex-wrap items-center gap-5">
-            <Button href={CALENDLY_URL} external>
-              Schedule a conversation
-            </Button>
-          </div>
+          <p className="mt-8 text-[15px] text-text-secondary max-w-prose leading-[1.85]">
+            If your organization is evaluating AI in decision-intensive
+            environments, a structured conversation is the right first step.
+          </p>
         </AnimateIn>
 
         <AnimateIn delay={0.15}>
-          <div className="mt-16 pt-12 border-t border-border">
-            <p className="text-[11px] uppercase tracking-[0.2em] text-text-muted mb-3">
-              Email
-            </p>
+          <div className="mt-12 flex flex-wrap items-center gap-6">
+            <Button href={CALENDLY_URL} external>
+              Schedule a conversation
+            </Button>
             <a
               href={`mailto:${CONTACT_EMAIL}`}
-              className="text-sm text-text-muted hover:text-text-primary transition-colors"
+              className="text-sm text-text-muted hover:text-text-secondary transition-colors duration-300"
             >
               Email us
             </a>

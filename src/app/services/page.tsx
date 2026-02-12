@@ -32,29 +32,35 @@ export default function ServicesPage() {
     <div className="pt-40 pb-24 md:pt-48 md:pb-32">
       <div className="mx-auto max-w-content px-6 lg:px-8">
         <AnimateIn>
-          <p className="text-[11px] uppercase tracking-[0.2em] text-text-muted mb-4">
+          <p className="text-[10px] uppercase tracking-[0.25em] text-accent mb-8">
             Services
           </p>
-          <p className="text-base text-text-secondary max-w-prose leading-[1.8]">
-            Codecision works with organizations at the point where AI capability
-            meets operational reality. Each engagement draws on published
-            research and empirical behavioral evaluation.
+          <h1 className="font-serif text-display-sm text-text-primary max-w-xl mb-8">
+            Where capability meets operational reality.
+          </h1>
+          <p className="text-[15px] text-text-secondary max-w-prose leading-[1.85]">
+            Each engagement draws on published research and empirical behavioral
+            evaluation. No trend reports. No vendor narratives.
           </p>
         </AnimateIn>
 
-        <div className="mt-16 space-y-0">
+        <div className="mt-20">
           {services.map((service, i) => (
             <AnimateIn key={service.title} delay={0.05 + i * 0.05}>
-              <div className="py-12 border-t border-border">
-                <div className="flex items-baseline gap-6 max-w-prose">
-                  <span className="text-xs text-text-muted font-mono tabular-nums shrink-0">
-                    {String(i + 1).padStart(2, "0")}
-                  </span>
-                  <div>
-                    <h2 className="text-base font-semibold text-text-primary mb-3">
+              <div className="py-12 border-t border-border/50 last:border-b last:border-border/50">
+                <div className="grid grid-cols-1 md:grid-cols-12 gap-6">
+                  <div className="md:col-span-1">
+                    <span className="text-xs font-mono text-accent/70">
+                      {String(i + 1).padStart(2, "0")}
+                    </span>
+                  </div>
+                  <div className="md:col-span-3">
+                    <h2 className="text-sm font-medium text-text-primary">
                       {service.title}
                     </h2>
-                    <p className="text-sm text-text-secondary leading-[1.8]">
+                  </div>
+                  <div className="md:col-span-7 md:col-start-6">
+                    <p className="text-[15px] text-text-secondary leading-[1.85]">
                       {service.description}
                     </p>
                   </div>
@@ -64,7 +70,7 @@ export default function ServicesPage() {
           ))}
         </div>
 
-        <AnimateIn delay={0.25} className="mt-12">
+        <AnimateIn delay={0.25} className="mt-16">
           <Button href={CALENDLY_URL} external>
             Schedule a conversation
           </Button>

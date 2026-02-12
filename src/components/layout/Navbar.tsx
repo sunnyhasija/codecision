@@ -23,16 +23,16 @@ export function Navbar() {
 
   return (
     <header
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
         scrolled
-          ? "bg-surface/90 backdrop-blur-md border-b border-border"
+          ? "bg-background/90 backdrop-blur-md border-b border-border/50"
           : "bg-transparent"
       }`}
     >
-      <nav className="mx-auto max-w-content px-6 lg:px-8 py-5 flex items-center justify-between">
+      <nav className="mx-auto max-w-content px-6 lg:px-8 py-6 flex items-center justify-between">
         <Link
           href="/"
-          className="font-semibold tracking-[0.15em] text-[13px] uppercase text-text-primary"
+          className="font-serif text-lg text-text-primary hover:text-accent transition-colors"
         >
           Codecision
         </Link>
@@ -42,10 +42,10 @@ export function Navbar() {
             <Link
               key={link.href}
               href={link.href}
-              className={`text-[13px] tracking-wide transition-colors ${
+              className={`text-[13px] tracking-wide transition-colors duration-300 ${
                 pathname === link.href
-                  ? "text-accent font-medium"
-                  : "text-text-muted hover:text-text-primary"
+                  ? "text-accent"
+                  : "text-text-muted hover:text-text-secondary"
               }`}
             >
               {link.label}
@@ -59,17 +59,17 @@ export function Navbar() {
           aria-label="Toggle menu"
         >
           <span
-            className={`block h-px w-full bg-text-primary transition-all duration-300 origin-center ${
+            className={`block h-px w-full bg-text-secondary transition-all duration-300 origin-center ${
               mobileOpen ? "rotate-45 translate-y-[7px]" : ""
             }`}
           />
           <span
-            className={`block h-px w-full bg-text-primary transition-opacity duration-300 ${
+            className={`block h-px w-full bg-text-secondary transition-opacity duration-300 ${
               mobileOpen ? "opacity-0" : ""
             }`}
           />
           <span
-            className={`block h-px w-full bg-text-primary transition-all duration-300 origin-center ${
+            className={`block h-px w-full bg-text-secondary transition-all duration-300 origin-center ${
               mobileOpen ? "-rotate-45 -translate-y-[7px]" : ""
             }`}
           />
@@ -83,7 +83,7 @@ export function Navbar() {
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -8 }}
             transition={{ duration: 0.2 }}
-            className="md:hidden bg-surface/95 backdrop-blur-md border-b border-border"
+            className="md:hidden bg-surface/95 backdrop-blur-md border-b border-border/50"
           >
             <div className="px-6 py-8 flex flex-col gap-5">
               {NAV_LINKS.map((link) => (
@@ -92,7 +92,7 @@ export function Navbar() {
                   href={link.href}
                   className={`text-base ${
                     pathname === link.href
-                      ? "text-accent font-medium"
+                      ? "text-accent"
                       : "text-text-secondary"
                   }`}
                 >

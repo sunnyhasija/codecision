@@ -3,29 +3,27 @@ import { NAV_LINKS, CONTACT_EMAIL } from "@/lib/constants";
 
 export function Footer() {
   return (
-    <footer className="border-t border-border">
-      <div className="mx-auto max-w-content px-6 lg:px-8 py-16">
-        <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-10">
+    <footer className="border-t border-border/50">
+      <div className="mx-auto max-w-content px-6 lg:px-8 py-20">
+        <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-12">
           <div>
-            <p className="font-semibold tracking-[0.15em] text-[13px] uppercase text-text-primary">
-              Codecision
-            </p>
+            <p className="font-serif text-lg text-text-primary">Codecision</p>
             <p className="mt-3 text-sm text-text-muted max-w-xs leading-relaxed">
               Research-backed advisory for AI-enabled decision systems.
             </p>
           </div>
 
-          <div className="flex gap-16">
+          <div className="flex gap-20">
             <div>
-              <p className="text-[11px] uppercase tracking-widest text-text-muted mb-4">
+              <p className="text-[10px] uppercase tracking-[0.2em] text-text-muted mb-5">
                 Pages
               </p>
-              <div className="flex flex-col gap-2.5">
+              <div className="flex flex-col gap-3">
                 {NAV_LINKS.map((link) => (
                   <Link
                     key={link.href}
                     href={link.href}
-                    className="text-sm text-text-secondary hover:text-text-primary transition-colors"
+                    className="text-sm text-text-muted hover:text-text-secondary transition-colors duration-300"
                   >
                     {link.label}
                   </Link>
@@ -34,12 +32,12 @@ export function Footer() {
             </div>
 
             <div>
-              <p className="text-[11px] uppercase tracking-widest text-text-muted mb-4">
+              <p className="text-[10px] uppercase tracking-[0.2em] text-text-muted mb-5">
                 Contact
               </p>
               <a
                 href={`mailto:${CONTACT_EMAIL}`}
-                className="text-sm text-text-secondary hover:text-accent transition-colors"
+                className="text-sm text-text-muted hover:text-accent transition-colors duration-300"
               >
                 Email us
               </a>
@@ -47,8 +45,8 @@ export function Footer() {
           </div>
         </div>
 
-        <div className="mt-16 pt-6 border-t border-border">
-          <p className="text-xs text-text-muted">
+        <div className="mt-20 pt-6 border-t border-border/30">
+          <p className="text-xs text-text-muted/60">
             &copy; {new Date().getFullYear()} Codecision LLC
           </p>
         </div>

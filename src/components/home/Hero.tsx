@@ -6,22 +6,24 @@ import { CONTACT_EMAIL, CALENDLY_URL } from "@/lib/constants";
 
 export function Hero() {
   return (
-    <section className="pt-40 pb-20 md:pt-48 md:pb-24">
-      <div className="mx-auto max-w-content px-6 lg:px-8">
+    <section className="min-h-[85vh] flex items-end pb-24 md:pb-32 relative">
+      <div className="mx-auto max-w-content px-6 lg:px-8 w-full">
         <motion.h1
-          initial={{ opacity: 0, y: 12 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5 }}
-          className="text-display-sm md:text-display font-semibold tracking-tight max-w-2xl text-text-primary"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 0.8 }}
+          className="font-serif text-display-sm md:text-display tracking-tight max-w-2xl text-text-primary"
         >
-          Most AI deployments fail before the model does.
+          Most AI deployments fail
+          <br />
+          <span className="text-accent">before the model does.</span>
         </motion.h1>
 
         <motion.p
-          initial={{ opacity: 0, y: 12 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5, delay: 0.1 }}
-          className="mt-8 text-base md:text-lg text-text-secondary max-w-prose leading-[1.8]"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 0.6, delay: 0.3 }}
+          className="mt-10 text-base text-text-secondary max-w-prose leading-[1.85]"
         >
           The failure is rarely capability. It is misalignment between task
           structure, model behavior, and organizational context. Codecision
@@ -31,17 +33,17 @@ export function Hero() {
         </motion.p>
 
         <motion.div
-          initial={{ opacity: 0, y: 12 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5, delay: 0.2 }}
-          className="mt-10 flex flex-wrap items-center gap-5"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 0.6, delay: 0.5 }}
+          className="mt-10 flex flex-wrap items-center gap-6"
         >
           <Button href={CALENDLY_URL} external>
             Schedule a conversation
           </Button>
           <a
             href={`mailto:${CONTACT_EMAIL}`}
-            className="text-sm text-text-muted hover:text-text-primary transition-colors"
+            className="text-sm text-text-muted hover:text-text-secondary transition-colors duration-300"
           >
             Email us
           </a>

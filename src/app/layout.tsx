@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import { Inter, DM_Serif_Display } from "next/font/google";
 import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
 import "./globals.css";
@@ -9,6 +9,12 @@ const inter = Inter({
   variable: "--font-inter",
 });
 
+const dmSerif = DM_Serif_Display({
+  weight: "400",
+  subsets: ["latin"],
+  variable: "--font-dm-serif",
+});
+
 export const metadata: Metadata = {
   metadataBase: new URL("https://codecision.ai"),
   title: {
@@ -16,7 +22,7 @@ export const metadata: Metadata = {
     template: "%s | Codecision",
   },
   description:
-    "Codecision advises organizations evaluating AI in supply chain and operational decision systems. Behavioral risk. Deployment discipline.",
+    "Codecision advises organizations evaluating AI in supply chain and operational decision systems. Grounded in published research and large-scale behavioral evaluation.",
   openGraph: {
     type: "website",
     locale: "en_US",
@@ -38,7 +44,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${inter.variable} font-sans antialiased`}>
+      <body
+        className={`${inter.variable} ${dmSerif.variable} font-sans antialiased`}
+      >
         <Navbar />
         <main>{children}</main>
         <Footer />
