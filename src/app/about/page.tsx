@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import { AnimateIn } from "@/components/ui/AnimateIn";
 
 export const metadata: Metadata = {
@@ -31,17 +32,19 @@ export default function AboutPage() {
     <div className="pt-40 pb-24 md:pt-48 md:pb-32">
       <div className="mx-auto max-w-content px-6 lg:px-8">
         {/* Intro */}
-        <AnimateIn>
-          <p className="text-[10px] uppercase tracking-[0.25em] text-accent mb-10">
-            About
-          </p>
-          <h1 className="font-serif text-display-sm text-text-primary">
-            Sunny Hasija, PhD
-          </h1>
-        </AnimateIn>
+        <div className="grid grid-cols-1 md:grid-cols-12 gap-12 md:gap-16 items-start">
+          <div className="md:col-span-8">
+            <AnimateIn>
+              <p className="text-[10px] uppercase tracking-[0.25em] text-accent mb-10">
+                About
+              </p>
+              <h1 className="font-serif text-display-sm text-text-primary">
+                Sunny Hasija, PhD
+              </h1>
+            </AnimateIn>
 
-        <AnimateIn delay={0.1}>
-          <div className="mt-10 max-w-prose space-y-6">
+            <AnimateIn delay={0.1}>
+              <div className="mt-10 space-y-6">
             <p className="text-[15px] text-text-secondary leading-[1.85]">
               I&apos;m a faculty member at Grand Valley State University and
               hold a PhD in Logistics from The Ohio State University&apos;s
@@ -65,8 +68,23 @@ export default function AboutPage() {
               aren&apos;t going to stress-test their own products. Someone
               should.
             </p>
+              </div>
+            </AnimateIn>
           </div>
-        </AnimateIn>
+
+          <div className="md:col-span-4">
+            <AnimateIn delay={0.15}>
+              <Image
+                src="/headshot.jpg"
+                alt="Sunny Hasija"
+                width={400}
+                height={500}
+                className="rounded-lg w-full object-cover aspect-[4/5]"
+                priority
+              />
+            </AnimateIn>
+          </div>
+        </div>
 
         {/* Research & Credentials */}
         <AnimateIn delay={0.15}>
