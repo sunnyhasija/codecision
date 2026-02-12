@@ -41,7 +41,7 @@ export function Footer() {
                 href={`mailto:${CONTACT_EMAIL}`}
                 className="text-sm text-text-secondary hover:text-accent transition-colors"
               >
-                {CONTACT_EMAIL}
+                Email us
               </a>
             </div>
           </div>

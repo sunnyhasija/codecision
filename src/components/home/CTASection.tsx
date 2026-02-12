@@ -21,9 +21,9 @@ export function CTASection() {
             </Button>
             <a
               href={`mailto:${CONTACT_EMAIL}`}
-              className="text-sm text-text-muted hover:text-accent transition-colors"
+              className="text-sm text-text-muted hover:text-text-primary transition-colors"
             >
-              {CONTACT_EMAIL}
+              Email us
             </a>
           </div>
         </AnimateIn>

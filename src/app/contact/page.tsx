@@ -35,9 +35,9 @@ export default function ContactPage() {
             </p>
             <a
               href={`mailto:${CONTACT_EMAIL}`}
-              className="text-base text-text-secondary hover:text-accent transition-colors"
+              className="text-sm text-text-muted hover:text-text-primary transition-colors"
             >
-              {CONTACT_EMAIL}
+              Email us
             </a>
           </div>
         </AnimateIn>
