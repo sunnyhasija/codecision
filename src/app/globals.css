@@ -5,21 +5,43 @@
 @layer base {
   html {
     scroll-behavior: smooth;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
   }
   body {
-    @apply bg-navy text-white;
+    @apply bg-white text-black antialiased;
   }
   ::selection {
-    background: rgba(183, 198, 194, 0.3);
+    background: #FF3000;
     color: white;
+  }
+  * {
+    border-radius: 0 !important;
   }
 }
 
 @layer utilities {
-  .text-outline {
-    -webkit-text-stroke: 1px theme("colors.sage");
-    color: transparent;
+  .swiss-grid-pattern {
+    background-image:
+      linear-gradient(rgba(0, 0, 0, 0.03) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(0, 0, 0, 0.03) 1px, transparent 1px);
+    background-size: 24px 24px;
+  }
+
+  .swiss-dots {
+    background-image: radial-gradient(
+      circle,
+      rgba(0, 0, 0, 0.04) 1px,
+      transparent 1px
+    );
+    background-size: 16px 16px;
+  }
+
+  .swiss-diagonal {
+    background-image: repeating-linear-gradient(
+      45deg,
+      transparent,
+      transparent 9px,
+      rgba(0, 0, 0, 0.02) 9px,
+      rgba(0, 0, 0, 0.02) 10px
+    );
   }
 }

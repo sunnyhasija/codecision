@@ -10,46 +10,54 @@ export const metadata: Metadata = {
 
 export default function ContactPage() {
   return (
-    <section className="bg-navy min-h-screen flex items-center px-8 md:px-12">
-      <div className="max-w-content mx-auto w-full py-40">
+    <section className="bg-white min-h-screen pt-32 md:pt-40 pb-24 px-8 md:px-12 relative">
+      <div className="absolute inset-0 swiss-grid-pattern pointer-events-none" />
+
+      <div className="max-w-[1400px] mx-auto relative z-10">
         <AnimateIn>
-          <p className="text-[12px] uppercase tracking-[0.2em] text-taupe mb-8">
+          <p className="text-[11px] font-bold uppercase tracking-widest text-swiss-accent mb-8">
             Contact
           </p>
-          <h1 className="font-display text-5xl md:text-huge uppercase tracking-tighter text-white">
-            Start a
+          <h1 className="font-black text-6xl md:text-8xl lg:text-9xl uppercase tracking-tighter leading-[0.85]">
+            Start A
             <br />
-            <span className="text-outline">Conversation</span>
+            Conversation<span className="text-swiss-accent">.</span>
           </h1>
         </AnimateIn>
 
-        <AnimateIn delay={0.1}>
-          <p className="mt-10 text-[15px] text-sage/80 leading-[1.85] font-light max-w-lg">
+        <AnimateIn delay={0.05}>
+          <p className="mt-10 text-sm md:text-base font-medium leading-relaxed max-w-lg">
             If you&apos;re evaluating AI for supply chain or operational
             decisions and want a structured, independent perspective, reach out.
           </p>
         </AnimateIn>
 
-        <AnimateIn delay={0.2}>
-          <div className="mt-12 flex flex-wrap items-center gap-8">
+        <AnimateIn delay={0.1}>
+          <div className="mt-12 flex flex-wrap gap-4">
             <a
               href={CALENDLY_URL}
               target="_blank"
               rel="noopener noreferrer"
-              className="text-[12px] uppercase tracking-[0.2em] text-white border border-white px-8 py-4 transition-all duration-500 ease-luxe hover:bg-white hover:text-navy"
+              className="text-[11px] font-bold uppercase tracking-widest bg-black text-white px-8 py-4 hover:bg-swiss-accent transition-colors duration-200"
             >
               Schedule a Conversation
+            </a>
+            <a
+              href={`mailto:${CONTACT_EMAIL}`}
+              className="text-[11px] font-bold uppercase tracking-widest border-2 border-black px-8 py-4 hover:bg-black hover:text-white transition-colors duration-200"
+            >
+              Email Us
             </a>
           </div>
         </AnimateIn>
 
-        <AnimateIn delay={0.25}>
-          <div className="mt-16 pt-12 border-t border-white/10">
-            <p className="text-[15px] text-sage/60 font-light">
+        <AnimateIn delay={0.15}>
+          <div className="mt-16 pt-12 border-t-2 border-black">
+            <p className="text-sm text-black/60">
               Or email directly:{" "}
               <a
                 href={`mailto:${CONTACT_EMAIL}`}
-                className="text-sage hover:text-white transition-colors duration-300"
+                className="text-black font-medium hover:text-swiss-accent transition-colors duration-200"
               >
                 {CONTACT_EMAIL}
               </a>

@@ -1,66 +1,57 @@
+"use client";
+
 import { AnimateIn } from "@/components/ui/AnimateIn";
 
 const capabilities = [
-  "Decision systems assessment",
-  "AI behavioral evaluation",
-  "Deployment risk analysis",
-  "Governance architecture",
-  "Organizational readiness",
+  {
+    title: "Behavioral Evaluation",
+    desc: "How does the AI actually make decisions under uncertainty, partial information, and conflicting signals? We test it.",
+  },
+  {
+    title: "Decision System Audit",
+    desc: "Structured assessment of where AI fits in your operational decision architecture, and where it does not.",
+  },
+  {
+    title: "Deployment Readiness",
+    desc: "Go/no-go framework for AI deployment based on behavioral evidence, not vendor promises.",
+  },
+  {
+    title: "Research Translation",
+    desc: "Peer-reviewed findings translated into actionable protocols for your operations team.",
+  },
 ];
 
 export function FrameworkSection() {
   return (
-    <section className="bg-[#fafafa] text-navy py-32 md:py-48 px-8 md:px-12">
-      <div className="max-w-content mx-auto grid grid-cols-1 md:grid-cols-12 gap-16">
-        {/* Left: capabilities list */}
-        <div className="md:col-span-4">
-          <AnimateIn>
-            <p className="text-[12px] uppercase tracking-[0.2em] text-taupe mb-10">
-              How We Work
-            </p>
-          </AnimateIn>
+    <section className="bg-white py-24 md:py-32 px-8 md:px-12">
+      <div className="max-w-[1400px] mx-auto">
+        <AnimateIn>
+          <p className="text-[11px] font-bold uppercase tracking-widest mb-12">
+            <span className="text-swiss-accent">02.</span> Capabilities
+          </p>
+          <h2 className="font-black text-5xl md:text-7xl lg:text-8xl uppercase tracking-tighter leading-[0.9] max-w-4xl">
+            What We
+            <br />
+            Do<span className="text-swiss-accent">.</span>
+          </h2>
+        </AnimateIn>
 
-          <div className="space-y-0">
-            {capabilities.map((item, i) => (
-              <AnimateIn key={item} delay={0.05 + i * 0.05}>
-                <div className="group flex items-center gap-4 py-4 border-b border-navy/10">
-                  <span className="block w-10 h-px bg-navy/30 transition-all duration-500 ease-luxe group-hover:w-16" />
-                  <span className="text-sm text-navy/70 font-light">
-                    {item}
-                  </span>
-                </div>
-              </AnimateIn>
-            ))}
-          </div>
-        </div>
-
-        {/* Right: large text */}
-        <div className="md:col-span-7 md:col-start-6">
-          <AnimateIn delay={0.1}>
-            <h2 className="font-display text-4xl md:text-6xl uppercase tracking-tighter text-navy leading-[0.95]">
-              Every engagement starts with{" "}
-              <span className="text-taupe italic font-sans font-light normal-case tracking-normal">
-                your decision,
-              </span>{" "}
-              not our framework.
-            </h2>
-          </AnimateIn>
-
-          <AnimateIn delay={0.2}>
-            <p className="mt-10 text-[15px] text-navy/60 leading-[1.85] font-light max-w-lg">
-              This might look like evaluating an AI procurement tool before you
-              scale it. Stress-testing an LLM&apos;s ordering behavior in your
-              planning environment. Running a focused session with your
-              leadership team on where autonomous operation is viable and where
-              it isn&apos;t.
-            </p>
-          </AnimateIn>
-
-          <AnimateIn delay={0.25}>
-            <p className="mt-6 text-[15px] text-navy font-semibold">
-              The format depends on the problem. The rigor doesn&apos;t.
-            </p>
-          </AnimateIn>
+        <div className="mt-16 md:mt-24 grid grid-cols-1 md:grid-cols-2 border-t-2 border-l-2 border-black">
+          {capabilities.map((cap, i) => (
+            <AnimateIn key={cap.title} delay={0.05 * (i + 1)}>
+              <div className="border-b-2 border-r-2 border-black p-8 md:p-12 group hover:bg-black hover:text-white transition-colors duration-200 cursor-default h-full">
+                <p className="text-[11px] font-bold uppercase tracking-widest text-swiss-accent mb-4">
+                  0{i + 1}
+                </p>
+                <h3 className="font-black text-2xl md:text-3xl uppercase tracking-tight mb-4">
+                  {cap.title}
+                </h3>
+                <p className="text-sm leading-relaxed text-black/60 group-hover:text-white/70 transition-colors duration-200">
+                  {cap.desc}
+                </p>
+              </div>
+            </AnimateIn>
+          ))}
         </div>
       </div>
     </section>
