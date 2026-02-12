@@ -9,33 +9,39 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        background: "#0c0f14",
-        "surface": "#141820",
-        "surface-light": "#1a1f2a",
-        border: "#262b36",
-        "text-primary": "#e8e6e1",
-        "text-secondary": "#9a978f",
-        "text-muted": "#5e5c57",
-        accent: "#c9a87c",
-        "accent-hover": "#dbbf99",
-        "accent-dim": "rgba(201, 168, 124, 0.1)",
+        navy: "#171e19",
+        sage: "#b7c6c2",
+        taupe: "#9f8d8b",
+        beige: "#d7c5b2",
+        cyan: "#d5f4f9",
+        "soft-blue": "#bbe2f5",
+        charcoal: "#302b2f",
       },
       fontFamily: {
-        sans: ["var(--font-inter)", "system-ui", "sans-serif"],
-        serif: ["var(--font-dm-serif)", "Georgia", "serif"],
+        display: ["var(--font-anton)", "sans-serif"],
+        sans: ["var(--font-jakarta)", "system-ui", "sans-serif"],
       },
       fontSize: {
-        display: ["3.5rem", { lineHeight: "1.08", letterSpacing: "-0.02em" }],
-        "display-sm": [
-          "2.5rem",
-          { lineHeight: "1.12", letterSpacing: "-0.015em" },
-        ],
-        heading: ["1.75rem", { lineHeight: "1.25", letterSpacing: "-0.01em" }],
-        subheading: ["1.125rem", { lineHeight: "1.7" }],
+        "hero": ["18vw", { lineHeight: "0.85" }],
+        "massive": ["9rem", { lineHeight: "0.9" }],
+        "huge": ["7rem", { lineHeight: "0.9" }],
+        "big": ["5rem", { lineHeight: "0.95" }],
       },
       maxWidth: {
-        content: "64rem",
-        prose: "38rem",
+        content: "80rem",
+      },
+      keyframes: {
+        float: {
+          "0%, 100%": { transform: "translateY(0px)" },
+          "50%": { transform: "translateY(-20px)" },
+        },
+      },
+      animation: {
+        float: "float 6s ease-in-out infinite",
+        "float-delayed": "float 6s ease-in-out 3s infinite",
+      },
+      transitionTimingFunction: {
+        luxe: "cubic-bezier(0.16, 1, 0.3, 1)",
       },
     },
   },

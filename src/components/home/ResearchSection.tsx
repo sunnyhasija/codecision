@@ -2,83 +2,87 @@ import { AnimateIn } from "@/components/ui/AnimateIn";
 
 export function ResearchSection() {
   return (
-    <section className="py-24 md:py-32">
-      <div className="mx-auto max-w-content px-6 lg:px-8">
-        <div className="border-t border-border/50 pt-24 md:pt-32">
-          <AnimateIn>
-            <p className="text-[10px] uppercase tracking-[0.25em] text-accent mb-12">
-              The Work Behind the Advisory
-            </p>
+    <section className="bg-navy py-32 md:py-48 px-8 md:px-12 relative overflow-hidden">
+      {/* Decorative cyan square */}
+      <div className="absolute top-20 right-12 w-64 h-64 bg-cyan/20 -z-0 hidden md:block" />
+
+      <div className="max-w-content mx-auto relative z-10">
+        <AnimateIn>
+          <p className="font-display text-lg uppercase tracking-wider text-sage mb-6">
+            The Work
+          </p>
+          <h2 className="font-display text-5xl md:text-huge uppercase tracking-tighter text-white">
+            Behind the
+            <br />
+            Advisory
+          </h2>
+        </AnimateIn>
+
+        <div className="mt-20 grid grid-cols-1 md:grid-cols-2 gap-20">
+          {/* SCM-Arena */}
+          <AnimateIn delay={0.1}>
+            <div>
+              <p className="text-[12px] uppercase tracking-[0.2em] text-sage/60 mb-6">
+                Behavioral Benchmark
+              </p>
+              <h3 className="font-display text-3xl uppercase tracking-tight text-white mb-6">
+                SCM-Arena
+              </h3>
+              <p className="text-[15px] text-sage/80 leading-[1.85] font-light">
+                We built a behavioral benchmark that tests how large language
+                models actually make supply chain decisions. Not what they know,
+                but how they behave. 144 experimental conditions, 5
+                replications each, over 52-round episodes. The results show
+                where autonomous operation is viable, where human oversight is
+                required, and where deployment shouldn&apos;t proceed.
+              </p>
+              <p className="mt-4 text-[12px] uppercase tracking-[0.15em] text-taupe">
+                Developed at The Ohio State University
+              </p>
+              <a
+                href="https://www.scm-arena.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-3 mt-6 text-sage hover:translate-x-2 transition-transform duration-500 ease-luxe group"
+              >
+                <span className="text-sm">scm-arena.com</span>
+                <svg
+                  className="w-4 h-4"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={1}
+                    d="M7 17L17 7M17 7H7M17 7v10"
+                  />
+                </svg>
+              </a>
+            </div>
           </AnimateIn>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-16 md:gap-20">
-            {/* SCM-Arena */}
-            <AnimateIn delay={0.05}>
-              <div>
-                <div className="inline-block px-3 py-1 bg-accent-dim rounded text-xs text-accent mb-5">
-                  Behavioral Benchmark
-                </div>
-                <h3 className="font-serif text-xl text-text-primary mb-4">
-                  SCM-Arena
-                </h3>
-                <p className="text-[15px] text-text-secondary leading-[1.85]">
-                  We built a behavioral benchmark that tests how large language
-                  models actually make supply chain decisions. Not what they
-                  know, but how they behave. 144 experimental conditions, 5
-                  replications each, over 52-round episodes. The results show
-                  where autonomous operation is viable, where human oversight is
-                  required, and where deployment shouldn&apos;t proceed.
-                </p>
-                <p className="mt-4 text-sm text-text-muted">
-                  Developed at The Ohio State University.
-                </p>
-                <a
-                  href="https://www.scm-arena.com"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 mt-4 text-sm text-accent hover:text-accent-hover transition-colors duration-300"
-                >
-                  scm-arena.com
-                  <svg
-                    className="w-3.5 h-3.5"
-                    fill="none"
-                    stroke="currentColor"
-                    viewBox="0 0 24 24"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth={1.5}
-                      d="M7 17L17 7M17 7H7M17 7v10"
-                    />
-                  </svg>
-                </a>
-              </div>
-            </AnimateIn>
-
-            {/* JBL Paper */}
-            <AnimateIn delay={0.1}>
-              <div>
-                <div className="inline-block px-3 py-1 bg-accent-dim rounded text-xs text-accent mb-5">
-                  Peer-Reviewed Research
-                </div>
-                <h3 className="font-serif text-xl text-text-primary mb-4">
-                  AI Trust &amp; Organizational Acceptance
-                </h3>
-                <p className="text-[15px] text-text-secondary leading-[1.85]">
-                  Peer-reviewed research on why the gap between AI&apos;s
-                  potential and its actual adoption persists, and the
-                  organizational dynamics that determine whether AI systems are
-                  accepted, resisted, or misused.
-                </p>
-                <p className="mt-4 text-sm text-text-muted">
-                  Published in the <em>Journal of Business Logistics</em>,
-                  2022. Cited in subsequent JBL work on AI roadmaps for the
-                  field.
-                </p>
-              </div>
-            </AnimateIn>
-          </div>
+          {/* JBL Paper */}
+          <AnimateIn delay={0.2}>
+            <div className="md:mt-16">
+              <p className="text-[12px] uppercase tracking-[0.2em] text-sage/60 mb-6">
+                Peer-Reviewed Research
+              </p>
+              <h3 className="font-display text-3xl uppercase tracking-tight text-white mb-6">
+                AI Trust &amp; Adoption
+              </h3>
+              <p className="text-[15px] text-sage/80 leading-[1.85] font-light">
+                Peer-reviewed research on why the gap between AI&apos;s
+                potential and its actual adoption persists, and the
+                organizational dynamics that determine whether AI systems are
+                accepted, resisted, or misused.
+              </p>
+              <p className="mt-4 text-[12px] uppercase tracking-[0.15em] text-taupe">
+                Journal of Business Logistics, 2022
+              </p>
+            </div>
+          </AnimateIn>
         </div>
       </div>
     </section>

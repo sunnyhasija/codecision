@@ -4,35 +4,22 @@ import { useState, useEffect } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { motion, AnimatePresence } from "framer-motion";
-import { NAV_LINKS } from "@/lib/constants";
+import { NAV_LINKS, CONTACT_EMAIL } from "@/lib/constants";
 
 export function Navbar() {
-  const [scrolled, setScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
   const pathname = usePathname();
-
-  useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 20);
-    window.addEventListener("scroll", onScroll, { passive: true });
-    return () => window.removeEventListener("scroll", onScroll);
-  }, []);
 
   useEffect(() => {
     setMobileOpen(false);
   }, [pathname]);
 
   return (
-    <header
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
-        scrolled
-          ? "bg-background/90 backdrop-blur-md border-b border-border/50"
-          : "bg-transparent"
-      }`}
-    >
-      <nav className="mx-auto max-w-content px-6 lg:px-8 py-6 flex items-center justify-between">
+    <header className="fixed top-0 left-0 right-0 z-50 mix-blend-difference">
+      <nav className="px-8 md:px-12 py-8 flex items-center justify-between">
         <Link
           href="/"
-          className="font-serif text-lg text-text-primary hover:text-accent transition-colors"
+          className="font-display text-2xl tracking-widest uppercase text-white"
         >
           Codecision
         </Link>
@@ -42,64 +29,52 @@ export function Navbar() {
             <Link
               key={link.href}
               href={link.href}
-              className={`text-[13px] tracking-wide transition-colors duration-300 ${
-                pathname === link.href
-                  ? "text-accent"
-                  : "text-text-muted hover:text-text-secondary"
-              }`}
+              className="text-[12px] uppercase tracking-[0.2em] text-white transition-opacity duration-300 hover:opacity-60"
             >
               {link.label}
             </Link>
           ))}
+          <a
+            href={`mailto:${CONTACT_EMAIL}`}
+            className="text-[12px] uppercase tracking-[0.2em] text-white border border-white px-5 py-2.5 transition-all duration-500 ease-luxe hover:bg-white hover:text-navy"
+          >
+            Get in Touch
+          </a>
         </div>
 
         <button
           onClick={() => setMobileOpen(!mobileOpen)}
-          className="md:hidden relative w-5 h-4 flex flex-col justify-between"
+          className="md:hidden text-[12px] uppercase tracking-[0.2em] text-white"
           aria-label="Toggle menu"
         >
-          <span
-            className={`block h-px w-full bg-text-secondary transition-all duration-300 origin-center ${
-              mobileOpen ? "rotate-45 translate-y-[7px]" : ""
-            }`}
-          />
-          <span
-            className={`block h-px w-full bg-text-secondary transition-opacity duration-300 ${
-              mobileOpen ? "opacity-0" : ""
-            }`}
-          />
-          <span
-            className={`block h-px w-full bg-text-secondary transition-all duration-300 origin-center ${
-              mobileOpen ? "-rotate-45 -translate-y-[7px]" : ""
-            }`}
-          />
+          {mobileOpen ? "Close" : "Menu"}
         </button>
       </nav>
 
       <AnimatePresence>
         {mobileOpen && (
           <motion.div
-            initial={{ opacity: 0, y: -8 }}
-            animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: -8 }}
-            transition={{ duration: 0.2 }}
-            className="md:hidden bg-surface/95 backdrop-blur-md border-b border-border/50"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 0.4, ease: [0.16, 1, 0.3, 1] }}
+            className="md:hidden fixed inset-0 bg-navy z-40 flex flex-col items-center justify-center gap-8"
           >
-            <div className="px-6 py-8 flex flex-col gap-5">
-              {NAV_LINKS.map((link) => (
-                <Link
-                  key={link.href}
-                  href={link.href}
-                  className={`text-base ${
-                    pathname === link.href
-                      ? "text-accent"
-                      : "text-text-secondary"
-                  }`}
-                >
-                  {link.label}
-                </Link>
-              ))}
-            </div>
+            {NAV_LINKS.map((link) => (
+              <Link
+                key={link.href}
+                href={link.href}
+                className="font-display text-4xl uppercase tracking-wider text-white"
+              >
+                {link.label}
+              </Link>
+            ))}
+            <a
+              href={`mailto:${CONTACT_EMAIL}`}
+              className="mt-4 text-[12px] uppercase tracking-[0.2em] text-white border border-white px-5 py-2.5"
+            >
+              Get in Touch
+            </a>
           </motion.div>
         )}
       </AnimatePresence>

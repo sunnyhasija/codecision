@@ -1,27 +1,53 @@
 import { AnimateIn } from "@/components/ui/AnimateIn";
 
+const capabilities = [
+  "Decision systems assessment",
+  "AI behavioral evaluation",
+  "Deployment risk analysis",
+  "Governance architecture",
+  "Organizational readiness",
+];
+
 export function FrameworkSection() {
   return (
-    <section className="py-24 md:py-32">
-      <div className="mx-auto max-w-content px-6 lg:px-8">
-        <div className="border-t border-border/50 pt-24 md:pt-32">
+    <section className="bg-[#fafafa] text-navy py-32 md:py-48 px-8 md:px-12">
+      <div className="max-w-content mx-auto grid grid-cols-1 md:grid-cols-12 gap-16">
+        {/* Left: capabilities list */}
+        <div className="md:col-span-4">
           <AnimateIn>
-            <p className="text-[10px] uppercase tracking-[0.25em] text-accent mb-10">
+            <p className="text-[12px] uppercase tracking-[0.2em] text-taupe mb-10">
               How We Work
             </p>
           </AnimateIn>
 
-          <AnimateIn delay={0.05}>
-            <p className="text-[15px] text-text-secondary max-w-prose leading-[1.85]">
-              Every engagement starts with a structured assessment across three
-              dimensions: the decision your AI needs to support, how the AI
-              system actually behaves in that context, and whether your
-              organization is set up to use it well.
-            </p>
+          <div className="space-y-0">
+            {capabilities.map((item, i) => (
+              <AnimateIn key={item} delay={0.05 + i * 0.05}>
+                <div className="group flex items-center gap-4 py-4 border-b border-navy/10">
+                  <span className="block w-10 h-px bg-navy/30 transition-all duration-500 ease-luxe group-hover:w-16" />
+                  <span className="text-sm text-navy/70 font-light">
+                    {item}
+                  </span>
+                </div>
+              </AnimateIn>
+            ))}
+          </div>
+        </div>
+
+        {/* Right: large text */}
+        <div className="md:col-span-7 md:col-start-6">
+          <AnimateIn delay={0.1}>
+            <h2 className="font-display text-4xl md:text-6xl uppercase tracking-tighter text-navy leading-[0.95]">
+              Every engagement starts with{" "}
+              <span className="text-taupe italic font-sans font-light normal-case tracking-normal">
+                your decision,
+              </span>{" "}
+              not our framework.
+            </h2>
           </AnimateIn>
 
-          <AnimateIn delay={0.1}>
-            <p className="mt-6 text-[15px] text-text-secondary max-w-prose leading-[1.85]">
+          <AnimateIn delay={0.2}>
+            <p className="mt-10 text-[15px] text-navy/60 leading-[1.85] font-light max-w-lg">
               This might look like evaluating an AI procurement tool before you
               scale it. Stress-testing an LLM&apos;s ordering behavior in your
               planning environment. Running a focused session with your
@@ -30,8 +56,8 @@ export function FrameworkSection() {
             </p>
           </AnimateIn>
 
-          <AnimateIn delay={0.15}>
-            <p className="mt-10 text-[15px] text-text-primary max-w-prose leading-[1.85] font-medium">
+          <AnimateIn delay={0.25}>
+            <p className="mt-6 text-[15px] text-navy font-semibold">
               The format depends on the problem. The rigor doesn&apos;t.
             </p>
           </AnimateIn>

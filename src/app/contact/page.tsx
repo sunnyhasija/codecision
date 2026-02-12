@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
 import { AnimateIn } from "@/components/ui/AnimateIn";
-import { Button } from "@/components/ui/Button";
 import { CONTACT_EMAIL, CALENDLY_URL } from "@/lib/constants";
 
 export const metadata: Metadata = {
@@ -11,39 +10,46 @@ export const metadata: Metadata = {
 
 export default function ContactPage() {
   return (
-    <div className="pt-40 pb-24 md:pt-48 md:pb-32">
-      <div className="mx-auto max-w-content px-6 lg:px-8">
+    <section className="bg-navy min-h-screen flex items-center px-8 md:px-12">
+      <div className="max-w-content mx-auto w-full py-40">
         <AnimateIn>
-          <p className="text-[10px] uppercase tracking-[0.25em] text-accent mb-10">
+          <p className="text-[12px] uppercase tracking-[0.2em] text-taupe mb-8">
             Contact
           </p>
-          <h1 className="font-serif text-display-sm text-text-primary max-w-lg">
-            Start a conversation.
+          <h1 className="font-display text-5xl md:text-huge uppercase tracking-tighter text-white">
+            Start a
+            <br />
+            <span className="text-outline">Conversation</span>
           </h1>
         </AnimateIn>
 
         <AnimateIn delay={0.1}>
-          <p className="mt-8 text-[15px] text-text-secondary max-w-prose leading-[1.85]">
+          <p className="mt-10 text-[15px] text-sage/80 leading-[1.85] font-light max-w-lg">
             If you&apos;re evaluating AI for supply chain or operational
             decisions and want a structured, independent perspective, reach out.
           </p>
         </AnimateIn>
 
-        <AnimateIn delay={0.15}>
-          <div className="mt-12">
-            <Button href={CALENDLY_URL} external>
-              Schedule a conversation
-            </Button>
+        <AnimateIn delay={0.2}>
+          <div className="mt-12 flex flex-wrap items-center gap-8">
+            <a
+              href={CALENDLY_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-[12px] uppercase tracking-[0.2em] text-white border border-white px-8 py-4 transition-all duration-500 ease-luxe hover:bg-white hover:text-navy"
+            >
+              Schedule a Conversation
+            </a>
           </div>
         </AnimateIn>
 
-        <AnimateIn delay={0.2}>
-          <div className="mt-12 pt-12 border-t border-border/50">
-            <p className="text-[15px] text-text-secondary">
+        <AnimateIn delay={0.25}>
+          <div className="mt-16 pt-12 border-t border-white/10">
+            <p className="text-[15px] text-sage/60 font-light">
               Or email directly:{" "}
               <a
                 href={`mailto:${CONTACT_EMAIL}`}
-                className="text-accent hover:text-accent-hover transition-colors duration-300"
+                className="text-sage hover:text-white transition-colors duration-300"
               >
                 {CONTACT_EMAIL}
               </a>
@@ -51,6 +57,6 @@ export default function ContactPage() {
           </div>
         </AnimateIn>
       </div>
-    </div>
+    </section>
   );
 }

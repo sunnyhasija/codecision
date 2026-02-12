@@ -1,54 +1,49 @@
 import Link from "next/link";
-import { NAV_LINKS, CONTACT_EMAIL } from "@/lib/constants";
+import { NAV_LINKS, CONTACT_EMAIL, CALENDLY_URL } from "@/lib/constants";
 
 export function Footer() {
   return (
-    <footer className="border-t border-border/50">
-      <div className="mx-auto max-w-content px-6 lg:px-8 py-20">
-        <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-12">
-          <div>
-            <p className="font-serif text-lg text-text-primary">Codecision</p>
-            <p className="mt-2 text-sm text-accent">
-              Research-grounded, not vendor-driven.
-            </p>
-          </div>
-
-          <div className="flex gap-20">
-            <div>
-              <p className="text-[10px] uppercase tracking-[0.2em] text-text-muted mb-5">
-                Pages
-              </p>
-              <div className="flex flex-col gap-3">
-                {NAV_LINKS.map((link) => (
-                  <Link
-                    key={link.href}
-                    href={link.href}
-                    className="text-sm text-text-muted hover:text-text-secondary transition-colors duration-300"
-                  >
-                    {link.label}
-                  </Link>
-                ))}
-              </div>
-            </div>
-
-            <div>
-              <p className="text-[10px] uppercase tracking-[0.2em] text-text-muted mb-5">
-                Contact
-              </p>
-              <a
-                href={`mailto:${CONTACT_EMAIL}`}
-                className="text-sm text-text-muted hover:text-accent transition-colors duration-300"
-              >
-                {CONTACT_EMAIL}
-              </a>
-            </div>
+    <footer className="bg-navy pt-32 pb-12">
+      <div className="px-8 md:px-12">
+        {/* Massive CTA */}
+        <div className="mb-20">
+          <h2 className="font-display text-6xl md:text-massive uppercase tracking-tighter text-white">
+            Let&apos;s Talk
+          </h2>
+          <a
+            href={CALENDLY_URL}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-block mt-8 font-display text-2xl md:text-4xl text-sage underline underline-offset-8 decoration-sage/40 hover:decoration-sage transition-all duration-500 ease-luxe uppercase tracking-wide"
+          >
+            Schedule a Conversation
+          </a>
+          <div className="mt-4">
+            <a
+              href={`mailto:${CONTACT_EMAIL}`}
+              className="text-[12px] uppercase tracking-[0.2em] text-taupe hover:text-sage transition-colors duration-300"
+            >
+              {CONTACT_EMAIL}
+            </a>
           </div>
         </div>
 
-        <div className="mt-20 pt-6 border-t border-border/30">
-          <p className="text-xs text-text-muted/60">
+        {/* Bottom bar */}
+        <div className="border-t border-white/10 pt-8 flex flex-col md:flex-row md:items-center md:justify-between gap-4">
+          <p className="text-[12px] uppercase tracking-[0.2em] text-white/40">
             &copy; {new Date().getFullYear()} Codecision LLC
           </p>
+          <div className="flex gap-8">
+            {NAV_LINKS.map((link) => (
+              <Link
+                key={link.href}
+                href={link.href}
+                className="text-[12px] uppercase tracking-[0.2em] text-white/40 hover:text-white/70 transition-colors duration-300"
+              >
+                {link.label}
+              </Link>
+            ))}
+          </div>
         </div>
       </div>
     </footer>

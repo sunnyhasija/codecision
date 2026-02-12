@@ -29,86 +29,97 @@ const links = [
 
 export default function AboutPage() {
   return (
-    <div className="pt-40 pb-24 md:pt-48 md:pb-32">
-      <div className="mx-auto max-w-content px-6 lg:px-8">
-        {/* Intro */}
-        <div className="grid grid-cols-1 md:grid-cols-12 gap-12 md:gap-16 items-start">
-          <div className="md:col-span-8">
+    <>
+      {/* Hero section */}
+      <section className="bg-navy pt-40 pb-32 md:pt-48 md:pb-48 px-8 md:px-12">
+        <div className="max-w-content mx-auto">
+          <AnimateIn>
+            <p className="text-[12px] uppercase tracking-[0.2em] text-taupe mb-8">
+              About
+            </p>
+            <h1 className="font-display text-5xl md:text-huge uppercase tracking-tighter text-white">
+              Sunny Hasija
+              <span className="text-sage">, PhD</span>
+            </h1>
+          </AnimateIn>
+        </div>
+      </section>
+
+      {/* Bio + photo */}
+      <section className="bg-white text-navy py-32 md:py-48 px-8 md:px-12">
+        <div className="max-w-content mx-auto grid grid-cols-1 md:grid-cols-12 gap-16 items-start">
+          <div className="md:col-span-7">
             <AnimateIn>
-              <p className="text-[10px] uppercase tracking-[0.25em] text-accent mb-10">
-                About
-              </p>
-              <h1 className="font-serif text-display-sm text-text-primary">
-                Sunny Hasija, PhD
-              </h1>
-            </AnimateIn>
+              <div className="space-y-6">
+                <p className="text-[15px] text-navy/70 leading-[1.85] font-light">
+                  I&apos;m a faculty member at Grand Valley State University and
+                  hold a PhD in Logistics from The Ohio State University&apos;s
+                  Fisher College of Business, where my research focused on how
+                  AI systems behave in operational decision environments.
+                </p>
 
-            <AnimateIn delay={0.1}>
-              <div className="mt-10 space-y-6">
-            <p className="text-[15px] text-text-secondary leading-[1.85]">
-              I&apos;m a faculty member at Grand Valley State University and
-              hold a PhD in Logistics from The Ohio State University&apos;s
-              Fisher College of Business, where my research focused on how AI
-              systems behave in operational decision environments.
-            </p>
+                <p className="text-[15px] text-navy/70 leading-[1.85] font-light">
+                  My published work, including peer-reviewed research on AI
+                  trust and adoption (
+                  <em>Journal of Business Logistics</em>, 2022) and the
+                  SCM-Arena behavioral benchmark, sits at the intersection of
+                  what AI can do in theory and what it actually does when
+                  organizations try to use it.
+                </p>
 
-            <p className="text-[15px] text-text-secondary leading-[1.85]">
-              My published work, including peer-reviewed research on AI trust
-              and adoption (<em>Journal of Business Logistics</em>, 2022) and
-              the SCM-Arena behavioral benchmark, sits at the intersection of
-              what AI can do in theory and what it actually does when
-              organizations try to use it.
-            </p>
-
-            <p className="text-[15px] text-text-secondary leading-[1.85]">
-              I started Codecision because the organizations evaluating AI for
-              supply chain and operations decisions don&apos;t have access to
-              the kind of rigorous, independent behavioral evaluation that the
-              research community takes for granted. The vendors selling AI tools
-              aren&apos;t going to stress-test their own products. Someone
-              should.
-            </p>
+                <p className="text-[15px] text-navy/70 leading-[1.85] font-light">
+                  I started Codecision because the organizations evaluating AI
+                  for supply chain and operations decisions don&apos;t have
+                  access to the kind of rigorous, independent behavioral
+                  evaluation that the research community takes for granted. The
+                  vendors selling AI tools aren&apos;t going to stress-test
+                  their own products. Someone should.
+                </p>
               </div>
             </AnimateIn>
           </div>
 
-          <div className="md:col-span-4">
+          <div className="md:col-span-4 md:col-start-9 relative">
             <AnimateIn delay={0.15}>
+              {/* Decorative offset square */}
+              <div className="absolute -top-6 -left-6 w-full h-full bg-cyan/20 -z-10" />
               <Image
                 src="/headshot.jpg"
                 alt="Sunny Hasija"
                 width={400}
                 height={500}
-                className="rounded-lg w-full object-cover aspect-[4/5]"
+                className="w-full object-cover aspect-[4/5] grayscale"
                 priority
               />
             </AnimateIn>
           </div>
         </div>
+      </section>
 
-        {/* Research & Credentials */}
-        <AnimateIn delay={0.15}>
-          <div className="mt-20 pt-20 border-t border-border/50 max-w-prose">
-            <p className="text-[10px] uppercase tracking-[0.25em] text-accent mb-8">
+      {/* Research section */}
+      <section className="bg-[#fafafa] text-navy py-32 md:py-48 px-8 md:px-12">
+        <div className="max-w-content mx-auto">
+          <AnimateIn>
+            <p className="text-[12px] uppercase tracking-[0.2em] text-taupe mb-8">
               Research &amp; Credentials
             </p>
 
-            <p className="text-[15px] text-text-secondary leading-[1.85]">
-              <span className="text-text-primary font-medium">
-                Research focus:
-              </span>{" "}
+            <p className="text-[15px] text-navy/70 leading-[1.85] font-light max-w-2xl">
+              <span className="text-navy font-semibold">Research focus:</span>{" "}
               Behavioral evaluation of AI in supply chain decision systems. How
               LLMs make operational decisions under uncertainty, partial
               information, and stress. How organizations build (or fail to
               build) trust in AI tools.
             </p>
+          </AnimateIn>
 
-            <div className="mt-10 space-y-8">
-              <div>
-                <p className="text-sm font-medium text-text-primary">
+          <div className="mt-16 grid grid-cols-1 md:grid-cols-2 gap-16">
+            <AnimateIn delay={0.1}>
+              <div className="border-b border-navy/10 pb-8">
+                <p className="font-display text-xl uppercase tracking-tight text-navy">
                   SCM-Arena
                 </p>
-                <p className="mt-2 text-sm text-text-secondary leading-[1.8]">
+                <p className="mt-3 text-sm text-navy/60 leading-[1.8] font-light">
                   A behavioral benchmark for LLM decision-making in supply
                   chains. 144 conditions, 5 replications, 52-round episodes.
                   Developed at Ohio State.
@@ -117,7 +128,7 @@ export default function AboutPage() {
                   href="https://www.scm-arena.com"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 mt-2 text-sm text-accent hover:text-accent-hover transition-colors duration-300"
+                  className="inline-flex items-center gap-3 mt-4 text-sm text-navy hover:translate-x-2 transition-transform duration-500 ease-luxe"
                 >
                   scm-arena.com
                   <svg
@@ -135,12 +146,14 @@ export default function AboutPage() {
                   </svg>
                 </a>
               </div>
+            </AnimateIn>
 
-              <div>
-                <p className="text-sm font-medium text-text-primary">
-                  &ldquo;In artificial intelligence (AI) we trust&rdquo;
+            <AnimateIn delay={0.15}>
+              <div className="border-b border-navy/10 pb-8">
+                <p className="font-display text-xl uppercase tracking-tight text-navy">
+                  &ldquo;In AI We Trust&rdquo;
                 </p>
-                <p className="mt-2 text-sm text-text-secondary leading-[1.8]">
+                <p className="mt-3 text-sm text-navy/60 leading-[1.8] font-light">
                   A qualitative investigation of AI technology acceptance.{" "}
                   <em>Journal of Business Logistics</em>, 2022.
                 </p>
@@ -148,7 +161,7 @@ export default function AboutPage() {
                   href="https://onlinelibrary.wiley.com/doi/10.1111/jbl.12301"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 mt-2 text-sm text-accent hover:text-accent-hover transition-colors duration-300"
+                  className="inline-flex items-center gap-3 mt-4 text-sm text-navy hover:translate-x-2 transition-transform duration-500 ease-luxe"
                 >
                   View paper
                   <svg
@@ -166,40 +179,27 @@ export default function AboutPage() {
                   </svg>
                 </a>
               </div>
-
-              <div>
-                <a
-                  href="https://scholar.google.com/citations?user=Vam6NJgAAAAJ"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-sm text-text-muted hover:text-accent transition-colors duration-300"
-                >
-                  Google Scholar profile
-                </a>
-              </div>
-            </div>
+            </AnimateIn>
           </div>
-        </AnimateIn>
 
-        {/* Links */}
-        <AnimateIn delay={0.2}>
-          <div className="mt-16 pt-16 border-t border-border/50">
-            <div className="flex flex-wrap gap-6">
+          {/* Links */}
+          <AnimateIn delay={0.2}>
+            <div className="mt-16 pt-12 border-t border-navy/10 flex flex-wrap gap-8">
               {links.map((link) => (
                 <a
                   key={link.label}
                   href={link.href}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-sm text-text-muted hover:text-accent transition-colors duration-300"
+                  className="text-[12px] uppercase tracking-[0.2em] text-navy/40 hover:text-navy transition-colors duration-300"
                 >
                   {link.label}
                 </a>
               ))}
             </div>
-          </div>
-        </AnimateIn>
-      </div>
-    </div>
+          </AnimateIn>
+        </div>
+      </section>
+    </>
   );
 }

@@ -1,16 +1,19 @@
-import { Button } from "@/components/ui/Button";
+import Link from "next/link";
 
 export default function NotFound() {
   return (
-    <div className="min-h-screen flex items-center justify-center">
+    <div className="min-h-screen bg-navy flex items-center justify-center px-8">
       <div className="text-center">
-        <p className="text-xs font-mono text-accent mb-6">404</p>
-        <p className="text-[15px] text-text-secondary mb-8">
+        <p className="font-display text-massive text-white/10">404</p>
+        <p className="mt-4 text-[15px] text-sage/60 font-light">
           Page not found.
         </p>
-        <Button href="/" variant="secondary">
-          Return home
-        </Button>
+        <Link
+          href="/"
+          className="inline-block mt-8 text-[12px] uppercase tracking-[0.2em] text-white border border-white/30 px-6 py-3 hover:bg-white hover:text-navy transition-all duration-500 ease-luxe"
+        >
+          Return Home
+        </Link>
       </div>
     </div>
   );
