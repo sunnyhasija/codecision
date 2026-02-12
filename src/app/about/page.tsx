@@ -93,7 +93,7 @@ export default function AboutPage() {
                 <p className="mt-2 text-sm text-text-secondary leading-[1.8]">
                   A behavioral benchmark for LLM decision-making in supply
                   chains. 144 conditions, 5 replications, 52-round episodes.
-                  Co-developed with Vincent Castillo (Ohio State).
+                  Developed at Ohio State.
                 </p>
                 <a
                   href="https://www.scm-arena.com"
@@ -124,8 +124,7 @@ export default function AboutPage() {
                 </p>
                 <p className="mt-2 text-sm text-text-secondary leading-[1.8]">
                   A qualitative investigation of AI technology acceptance.{" "}
-                  <em>Journal of Business Logistics</em>, 2022. With Terry Esper
-                  (Ohio State).
+                  <em>Journal of Business Logistics</em>, 2022.
                 </p>
                 <a
                   href="https://onlinelibrary.wiley.com/doi/10.1111/jbl.12301"

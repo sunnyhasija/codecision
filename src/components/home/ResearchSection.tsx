@@ -30,7 +30,7 @@ export function ResearchSection() {
                   required, and where deployment shouldn&apos;t proceed.
                 </p>
                 <p className="mt-4 text-sm text-text-muted">
-                  Developed with Vincent Castillo at The Ohio State University.
+                  Developed at The Ohio State University.
                 </p>
                 <a
                   href="https://www.scm-arena.com"
@@ -72,9 +72,9 @@ export function ResearchSection() {
                   accepted, resisted, or misused.
                 </p>
                 <p className="mt-4 text-sm text-text-muted">
-                  Published in the <em>Journal of Business Logistics</em> (2022)
-                  with Terry Esper at Ohio State. Cited in subsequent JBL work
-                  on AI roadmaps for the field.
+                  Published in the <em>Journal of Business Logistics</em>,
+                  2022. Cited in subsequent JBL work on AI roadmaps for the
+                  field.
                 </p>
               </div>
             </AnimateIn>
