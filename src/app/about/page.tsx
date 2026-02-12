@@ -150,9 +150,14 @@ export default function AboutPage() {
               </div>
 
               <div>
-                <p className="text-sm text-text-muted">
-                  ~90 citations on Google Scholar
-                </p>
+                <a
+                  href="https://scholar.google.com/citations?user=Vam6NJgAAAAJ"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-sm text-text-muted hover:text-accent transition-colors duration-300"
+                >
+                  Google Scholar profile
+                </a>
               </div>
             </div>
           </div>
