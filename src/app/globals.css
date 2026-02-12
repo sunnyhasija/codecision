@@ -11,7 +11,7 @@
     @apply bg-background text-text-primary;
   }
   ::selection {
-    background: rgba(99, 102, 241, 0.3);
-    color: white;
+    background: rgba(30, 58, 95, 0.15);
+    color: #1a1a2e;
   }
 }

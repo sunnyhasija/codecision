@@ -25,28 +25,27 @@ export function Navbar() {
     <header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         scrolled
-          ? "bg-background/80 backdrop-blur-md border-b border-border"
+          ? "bg-surface/90 backdrop-blur-md border-b border-border"
           : "bg-transparent"
       }`}
     >
-      <nav className="mx-auto max-w-content px-6 py-4 flex items-center justify-between">
+      <nav className="mx-auto max-w-content px-6 lg:px-8 py-5 flex items-center justify-between">
         <Link
           href="/"
-          className="font-semibold tracking-[0.2em] text-sm uppercase text-text-primary"
+          className="font-semibold tracking-[0.15em] text-[13px] uppercase text-text-primary"
         >
           Codecision
         </Link>
 
-        {/* Desktop nav */}
-        <div className="hidden md:flex items-center gap-8">
+        <div className="hidden md:flex items-center gap-10">
           {NAV_LINKS.map((link) => (
             <Link
               key={link.href}
               href={link.href}
-              className={`text-sm transition-colors ${
+              className={`text-[13px] tracking-wide transition-colors ${
                 pathname === link.href
-                  ? "text-accent"
-                  : "text-text-secondary hover:text-text-primary"
+                  ? "text-accent font-medium"
+                  : "text-text-muted hover:text-text-primary"
               }`}
             >
               {link.label}
@@ -54,15 +53,14 @@ export function Navbar() {
           ))}
         </div>
 
-        {/* Mobile hamburger */}
         <button
           onClick={() => setMobileOpen(!mobileOpen)}
-          className="md:hidden relative w-6 h-5 flex flex-col justify-between"
+          className="md:hidden relative w-5 h-4 flex flex-col justify-between"
           aria-label="Toggle menu"
         >
           <span
             className={`block h-px w-full bg-text-primary transition-all duration-300 origin-center ${
-              mobileOpen ? "rotate-45 translate-y-2" : ""
+              mobileOpen ? "rotate-45 translate-y-[7px]" : ""
             }`}
           />
           <span
@@ -72,30 +70,29 @@ export function Navbar() {
           />
           <span
             className={`block h-px w-full bg-text-primary transition-all duration-300 origin-center ${
-              mobileOpen ? "-rotate-45 -translate-y-2" : ""
+              mobileOpen ? "-rotate-45 -translate-y-[7px]" : ""
             }`}
           />
         </button>
       </nav>
 
-      {/* Mobile overlay */}
       <AnimatePresence>
         {mobileOpen && (
           <motion.div
-            initial={{ opacity: 0, y: -10 }}
+            initial={{ opacity: 0, y: -8 }}
             animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: -10 }}
+            exit={{ opacity: 0, y: -8 }}
             transition={{ duration: 0.2 }}
-            className="md:hidden bg-background/95 backdrop-blur-md border-b border-border"
+            className="md:hidden bg-surface/95 backdrop-blur-md border-b border-border"
           >
-            <div className="px-6 py-6 flex flex-col gap-4">
+            <div className="px-6 py-8 flex flex-col gap-5">
               {NAV_LINKS.map((link) => (
                 <Link
                   key={link.href}
                   href={link.href}
-                  className={`text-lg ${
+                  className={`text-base ${
                     pathname === link.href
-                      ? "text-accent"
+                      ? "text-accent font-medium"
                       : "text-text-secondary"
                   }`}
                 >

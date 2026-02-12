@@ -1,47 +1,46 @@
 import type { Metadata } from "next";
-import { SectionHeading } from "@/components/ui/SectionHeading";
-import { ContactForm } from "@/components/contact/ContactForm";
-import { CalendlyEmbed } from "@/components/contact/CalendlyEmbed";
 import { AnimateIn } from "@/components/ui/AnimateIn";
-import { CONTACT_EMAIL } from "@/lib/constants";
+import { Button } from "@/components/ui/Button";
+import { CONTACT_EMAIL, CALENDLY_URL } from "@/lib/constants";
 
 export const metadata: Metadata = {
   title: "Contact",
   description:
-    "Start a conversation with Codecision. Schedule a call or send a message.",
+    "Start a conversation with Codecision about AI deployment in decision-intensive environments.",
 };
 
 export default function ContactPage() {
   return (
-    <div className="pt-32 pb-24">
-      <div className="mx-auto max-w-content px-6">
-        <SectionHeading
-          title="Let's talk about your AI deployment needs."
-        />
+    <div className="pt-40 pb-24 md:pt-48 md:pb-32">
+      <div className="mx-auto max-w-content px-6 lg:px-8">
+        <AnimateIn>
+          <p className="text-base text-text-secondary max-w-prose leading-[1.8]">
+            If your organization is evaluating AI in decision-intensive
+            environments, begin with a structured conversation.
+          </p>
+        </AnimateIn>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 mt-8">
-          <AnimateIn>
-            <ContactForm />
-          </AnimateIn>
+        <AnimateIn delay={0.1}>
+          <div className="mt-12 flex flex-wrap items-center gap-5">
+            <Button href={CALENDLY_URL} external>
+              Schedule a conversation
+            </Button>
+          </div>
+        </AnimateIn>
 
-          <AnimateIn delay={0.15}>
-            <div className="space-y-8">
-              <CalendlyEmbed />
-
-              <div className="border border-border rounded-lg p-8 bg-surface">
-                <p className="text-xs uppercase tracking-widest text-text-muted mb-3">
-                  Email directly
-                </p>
-                <a
-                  href={`mailto:${CONTACT_EMAIL}`}
-                  className="text-text-secondary hover:text-accent transition-colors"
-                >
-                  {CONTACT_EMAIL}
-                </a>
-              </div>
-            </div>
-          </AnimateIn>
-        </div>
+        <AnimateIn delay={0.15}>
+          <div className="mt-16 pt-12 border-t border-border">
+            <p className="text-[11px] uppercase tracking-[0.2em] text-text-muted mb-3">
+              Email
+            </p>
+            <a
+              href={`mailto:${CONTACT_EMAIL}`}
+              className="text-base text-text-secondary hover:text-accent transition-colors"
+            >
+              {CONTACT_EMAIL}
+            </a>
+          </div>
+        </AnimateIn>
       </div>
     </div>
   );

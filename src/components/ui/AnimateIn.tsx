@@ -6,27 +6,15 @@ import { ReactNode } from "react";
 interface AnimateInProps {
   children: ReactNode;
   delay?: number;
-  direction?: "up" | "left" | "right";
   className?: string;
 }
 
-const offsets = {
-  up: { y: 24, x: 0 },
-  left: { y: 0, x: -24 },
-  right: { y: 0, x: 24 },
-};
-
-export function AnimateIn({
-  children,
-  delay = 0,
-  direction = "up",
-  className,
-}: AnimateInProps) {
+export function AnimateIn({ children, delay = 0, className }: AnimateInProps) {
   return (
     <motion.div
-      initial={{ opacity: 0, ...offsets[direction] }}
-      whileInView={{ opacity: 1, x: 0, y: 0 }}
-      viewport={{ once: true, margin: "-80px" }}
+      initial={{ opacity: 0, y: 16 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true, margin: "-60px" }}
       transition={{ duration: 0.5, delay, ease: "easeOut" }}
       className={className}
     >

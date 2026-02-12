@@ -10,13 +10,13 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://codecision.com"),
+  metadataBase: new URL("https://codecision.ai"),
   title: {
-    default: "Codecision | Strategic AI Advisory",
+    default: "Codecision | AI Advisory for Decision Systems",
     template: "%s | Codecision",
   },
   description:
-    "Research-backed advisory for organizations evaluating AI-enabled decision systems in supply chain and operational contexts.",
+    "Codecision advises organizations evaluating AI in supply chain and operational decision systems. Behavioral risk. Deployment discipline.",
   openGraph: {
     type: "website",
     locale: "en_US",

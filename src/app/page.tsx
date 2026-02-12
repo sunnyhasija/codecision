@@ -2,14 +2,11 @@ import type { Metadata } from "next";
 import { Hero } from "@/components/home/Hero";
 import { ProblemSection } from "@/components/home/ProblemSection";
 import { FrameworkSection } from "@/components/home/FrameworkSection";
-import { ServicesPreview } from "@/components/home/ServicesPreview";
-import { ResearchPreview } from "@/components/home/ResearchPreview";
-import { CTASection } from "@/components/home/CTASection";
 
 export const metadata: Metadata = {
-  title: "Codecision | Strategic AI Advisory for Operations",
+  title: "Codecision | AI Advisory for Decision Systems",
   description:
-    "Codecision helps organizations evaluate AI-enabled decision systems in supply chain and operational contexts. Research-informed. No hype.",
+    "Codecision advises organizations evaluating AI in supply chain and operational decision systems. Behavioral risk. Deployment discipline.",
 };
 
 export default function Home() {
@@ -18,9 +15,6 @@ export default function Home() {
       <Hero />
       <ProblemSection />
       <FrameworkSection />
-      <ServicesPreview />
-      <ResearchPreview />
-      <CTASection />
     </>
   );
 }

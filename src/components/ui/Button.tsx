@@ -2,9 +2,9 @@ import Link from "next/link";
 import { ReactNode } from "react";
 
 interface ButtonProps {
-  variant?: "primary" | "secondary" | "ghost";
+  variant?: "primary" | "secondary";
   href?: string;
-  onClick?: () => void;
+  external?: boolean;
   children: ReactNode;
   className?: string;
 }
@@ -14,18 +14,24 @@ const variants = {
     "bg-accent hover:bg-accent-hover text-white",
   secondary:
     "border border-border hover:border-text-muted text-text-primary",
-  ghost:
-    "text-text-secondary hover:text-text-primary",
 };
 
 export function Button({
   variant = "primary",
   href,
-  onClick,
+  external,
   children,
   className = "",
 }: ButtonProps) {
-  const classes = `inline-flex items-center justify-center px-6 py-3 text-sm font-medium rounded transition-all duration-200 ${variants[variant]} ${className}`;
+  const classes = `inline-flex items-center justify-center px-7 py-3 text-sm font-medium tracking-wide rounded transition-all duration-200 ${variants[variant]} ${className}`;
+
+  if (href && external) {
+    return (
+      <a href={href} target="_blank" rel="noopener noreferrer" className={classes}>
+        {children}
+      </a>
+    );
+  }
 
   if (href) {
     return (
@@ -36,8 +42,6 @@ export function Button({
   }
 
   return (
-    <button onClick={onClick} className={classes}>
-      {children}
-    </button>
+    <button className={classes}>{children}</button>
   );
 }

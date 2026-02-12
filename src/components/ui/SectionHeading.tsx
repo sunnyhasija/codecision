@@ -1,25 +1,24 @@
 import { AnimateIn } from "./AnimateIn";
 
 interface SectionHeadingProps {
+  label?: string;
   title: string;
   subtitle?: string;
-  align?: "left" | "center";
 }
 
-export function SectionHeading({
-  title,
-  subtitle,
-  align = "left",
-}: SectionHeadingProps) {
+export function SectionHeading({ label, title, subtitle }: SectionHeadingProps) {
   return (
-    <AnimateIn
-      className={`mb-12 ${align === "center" ? "text-center" : ""}`}
-    >
+    <AnimateIn className="mb-16">
+      {label && (
+        <p className="text-[11px] uppercase tracking-[0.2em] text-text-muted mb-4">
+          {label}
+        </p>
+      )}
       <h2 className="text-heading font-semibold tracking-tight text-text-primary">
         {title}
       </h2>
       {subtitle && (
-        <p className="mt-4 text-subheading text-text-secondary max-w-2xl leading-relaxed">
+        <p className="mt-4 text-base text-text-secondary max-w-prose leading-relaxed">
           {subtitle}
         </p>
       )}

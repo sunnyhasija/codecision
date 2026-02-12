@@ -1,58 +1,69 @@
 import { AnimateIn } from "@/components/ui/AnimateIn";
-import { SectionHeading } from "@/components/ui/SectionHeading";
+import { Button } from "@/components/ui/Button";
+import { CALENDLY_URL } from "@/lib/constants";
 
-const pillars = [
+const dimensions = [
   {
-    label: "Task",
-    description:
-      "The structure of the decision: dynamic, delayed, adversarial, cooperative.",
+    label: "Task Structure",
+    detail:
+      "Static or dynamic? One-shot or repeated? Cooperative or adversarial? Observable or constrained?",
   },
   {
-    label: "Technology",
-    description:
-      "Behavioral characteristics of the AI system: stability, degradation, bias.",
+    label: "Technology Behavior",
+    detail:
+      "Does the AI degrade gracefully? Amplify volatility? Introduce asymmetry? Depend on role assignment?",
   },
   {
-    label: "Trait",
-    description:
-      "How humans interact with the AI: trust, anchoring, oversight behavior.",
+    label: "Organizational Context",
+    detail:
+      "Where is oversight exercised? How are incentives structured? How is accountability defined?",
   },
 ];
 
 export function FrameworkSection() {
   return (
-    <section className="py-24 bg-surface">
-      <div className="mx-auto max-w-content px-6">
-        <SectionHeading
-          title="Our Framework"
-          subtitle="AI decision systems perform well only when three dimensions align."
-        />
-
-        <AnimateIn delay={0.1}>
-          <p className="text-xs uppercase tracking-widest text-accent mb-10">
-            Task &ndash; Technology &ndash; Trait Fit
+    <section className="py-24 md:py-32 border-t border-border">
+      <div className="mx-auto max-w-content px-6 lg:px-8">
+        <AnimateIn>
+          <p className="text-[11px] uppercase tracking-[0.2em] text-text-muted mb-8">
+            Our lens
           </p>
         </AnimateIn>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-          {pillars.map((pillar, i) => (
-            <AnimateIn key={pillar.label} delay={0.1 + i * 0.1}>
-              <div className="border border-border rounded-lg p-6 bg-background h-full">
-                <p className="text-sm font-semibold text-accent uppercase tracking-wider mb-3">
-                  {pillar.label}
+        <AnimateIn delay={0.05}>
+          <p className="text-base text-text-secondary max-w-prose leading-[1.8]">
+            Codecision applies a structured lens to AI-enabled decision systems.
+          </p>
+        </AnimateIn>
+
+        <div className="mt-14 space-y-10">
+          {dimensions.map((dim, i) => (
+            <AnimateIn key={dim.label} delay={0.1 + i * 0.05}>
+              <div className="max-w-prose">
+                <p className="text-sm font-semibold text-text-primary mb-2">
+                  {dim.label}
                 </p>
-                <p className="text-sm text-text-secondary leading-relaxed">
-                  {pillar.description}
+                <p className="text-sm text-text-secondary leading-[1.8]">
+                  {dim.detail}
                 </p>
               </div>
             </AnimateIn>
           ))}
         </div>
 
-        <AnimateIn delay={0.4}>
-          <p className="mt-10 text-text-primary font-medium">
-            Misalignment creates risk. Alignment creates value.
+        <AnimateIn delay={0.3}>
+          <p className="mt-14 text-base text-text-primary max-w-prose leading-[1.8] font-medium">
+            Deployment succeeds when institutional design matches technological
+            behavior.
           </p>
+        </AnimateIn>
+
+        <AnimateIn delay={0.35}>
+          <div className="mt-12">
+            <Button href={CALENDLY_URL} external>
+              Schedule a conversation
+            </Button>
+          </div>
         </AnimateIn>
       </div>
     </section>
