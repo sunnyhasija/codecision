@@ -46,9 +46,8 @@ export function Hero() {
           className="mt-12 md:mt-16 grid grid-cols-1 md:grid-cols-12 gap-8 items-end border-t-2 border-black pt-8"
         >
           <p className="md:col-span-5 text-sm md:text-base font-medium leading-relaxed">
-            For organizations deploying AI in supply chain and operational
-            decisions. Built on peer-reviewed research and large-scale
-            behavioral evaluation.
+            For organizations deciding whether to trust AI with supply
+            chain operations. We test how these tools actually behave.
           </p>
           <div className="md:col-span-7 md:flex md:justify-end">
             <a

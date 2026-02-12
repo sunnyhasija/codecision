@@ -27,8 +27,9 @@ export default function ContactPage() {
 
         <AnimateIn delay={0.05}>
           <p className="mt-10 text-sm md:text-base font-medium leading-relaxed max-w-lg">
-            If you&apos;re evaluating AI for supply chain or operational
-            decisions and want a structured, independent perspective, reach out.
+            If you&apos;re evaluating AI for supply chain or operations and
+            want someone who isn&apos;t selling the tool to look at it with
+            you, reach out.
           </p>
         </AnimateIn>
 

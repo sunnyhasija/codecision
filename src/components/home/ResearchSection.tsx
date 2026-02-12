@@ -71,10 +71,9 @@ export function ResearchSection() {
                   AI Trust &amp; Adoption
                 </h3>
                 <p className="text-sm md:text-base text-white/70 leading-relaxed">
-                  Peer-reviewed research on why the gap between AI&apos;s
-                  potential and its actual adoption persists, and the
-                  organizational dynamics that determine whether AI systems are
-                  accepted, resisted, or misused.
+                  Why do organizations resist AI tools that work, and trust
+                  ones that don&apos;t? That&apos;s what the paper
+                  investigates.
                 </p>
                 <p className="mt-4 text-[11px] font-bold uppercase tracking-widest text-white/30">
                   Journal of Business Logistics, 2022

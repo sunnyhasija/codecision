@@ -58,16 +58,17 @@ export default function AboutPage() {
                 <p className="text-sm md:text-base font-medium leading-relaxed">
                   I&apos;m a faculty member at Grand Valley State University and
                   hold a PhD in Logistics from The Ohio State University&apos;s
-                  Fisher College of Business, where my research focused on how
-                  AI systems behave in operational decision environments.
+                  Fisher College of Business, where I studied how AI systems
+                  behave when organizations actually try to use them for
+                  operations.
                 </p>
                 <p className="text-sm md:text-base text-black/60 leading-relaxed">
                   My published work, including peer-reviewed research on AI
                   trust and adoption (
                   <em>Journal of Business Logistics</em>, 2022) and the
-                  SCM-Arena behavioral benchmark, sits at the intersection of
-                  what AI can do in theory and what it actually does when
-                  organizations try to use it.
+                  SCM-Arena behavioral benchmark, covers the distance between
+                  what AI can do in a lab and what happens when you put it in
+                  front of a procurement team.
                 </p>
                 <p className="text-sm md:text-base text-black/60 leading-relaxed">
                   I started Codecision because the organizations evaluating AI
@@ -108,10 +109,9 @@ export default function AboutPage() {
             </p>
             <p className="text-sm md:text-base leading-relaxed max-w-2xl">
               <span className="font-bold">Research focus:</span>{" "}
-              Behavioral evaluation of AI in supply chain decision systems. How
-              LLMs make operational decisions under uncertainty, partial
-              information, and stress. How organizations build (or fail to
-              build) trust in AI tools.
+              How LLMs make operational decisions under pressure, partial
+              information, and conflicting signals. And why organizations keep
+              trusting AI tools that haven&apos;t earned it.
             </p>
           </AnimateIn>
 

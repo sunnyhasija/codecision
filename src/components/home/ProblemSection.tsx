@@ -35,8 +35,8 @@ export function ProblemSection() {
                 </p>
                 <p className="text-sm md:text-base text-black/60 leading-relaxed">
                   The gap between what AI tools promise and how they actually
-                  behave in operational environments is where the risk lives. We
-                  close that gap with behavioral evidence, not demos.
+                  behave is where organizations get burned. We test behavior
+                  under real conditions.
                 </p>
               </div>
             </AnimateIn>

@@ -9,15 +9,15 @@ const capabilities = [
   },
   {
     title: "Decision System Audit",
-    desc: "Structured assessment of where AI fits in your operational decision architecture, and where it does not.",
+    desc: "We map where AI fits in your decision process and where it doesn't.",
   },
   {
     title: "Deployment Readiness",
-    desc: "Go/no-go framework for AI deployment based on behavioral evidence, not vendor promises.",
+    desc: "A go/no-go call on whether to deploy, based on how the AI actually performed in testing.",
   },
   {
     title: "Research Translation",
-    desc: "Peer-reviewed findings translated into actionable protocols for your operations team.",
+    desc: "We turn published research into something your ops team can actually use.",
   },
 ];
 
