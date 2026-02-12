@@ -2,7 +2,7 @@ import { MetadataRoute } from "next";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const baseUrl = "https://codecision.ai";
-  const routes = ["", "/services", "/contact"];
+  const routes = ["", "/about", "/contact"];
 
   return routes.map((route) => ({
     url: `${baseUrl}${route}`,

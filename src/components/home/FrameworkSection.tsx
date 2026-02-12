@@ -1,23 +1,5 @@
 import { AnimateIn } from "@/components/ui/AnimateIn";
 
-const dimensions = [
-  {
-    label: "Task Structure",
-    detail:
-      "Static or dynamic? One-shot or repeated? Cooperative or adversarial? Observable or constrained?",
-  },
-  {
-    label: "Technology Behavior",
-    detail:
-      "Does the AI degrade gracefully? Amplify volatility? Introduce asymmetry? Depend on role assignment?",
-  },
-  {
-    label: "Organizational Context",
-    detail:
-      "Where is oversight exercised? How are incentives structured? How is accountability defined?",
-  },
-];
-
 export function FrameworkSection() {
   return (
     <section className="py-24 md:py-32">
@@ -25,40 +7,32 @@ export function FrameworkSection() {
         <div className="border-t border-border/50 pt-24 md:pt-32">
           <AnimateIn>
             <p className="text-[10px] uppercase tracking-[0.25em] text-accent mb-10">
-              How We Evaluate
+              How We Work
             </p>
           </AnimateIn>
 
           <AnimateIn delay={0.05}>
-            <p className="text-[15px] text-text-secondary max-w-prose leading-[1.85] mb-16">
-              Codecision applies a structured lens to AI-enabled decision
-              systems. This lens is not theoretical. It is built on ongoing
-              empirical work.
+            <p className="text-[15px] text-text-secondary max-w-prose leading-[1.85]">
+              Every engagement starts with a structured assessment across three
+              dimensions: the decision your AI needs to support, how the AI
+              system actually behaves in that context, and whether your
+              organization is set up to use it well.
             </p>
           </AnimateIn>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-px bg-border/30 rounded-lg overflow-hidden">
-            {dimensions.map((dim, i) => (
-              <AnimateIn key={dim.label} delay={0.1 + i * 0.05}>
-                <div className="bg-surface p-8 md:p-10 h-full">
-                  <p className="text-xs font-mono text-accent/70 mb-4">
-                    {String(i + 1).padStart(2, "0")}
-                  </p>
-                  <p className="text-sm font-medium text-text-primary mb-3">
-                    {dim.label}
-                  </p>
-                  <p className="text-sm text-text-muted leading-[1.8]">
-                    {dim.detail}
-                  </p>
-                </div>
-              </AnimateIn>
-            ))}
-          </div>
+          <AnimateIn delay={0.1}>
+            <p className="mt-6 text-[15px] text-text-secondary max-w-prose leading-[1.85]">
+              This might look like evaluating an AI procurement tool before you
+              scale it. Stress-testing an LLM&apos;s ordering behavior in your
+              planning environment. Running a focused session with your
+              leadership team on where autonomous operation is viable and where
+              it isn&apos;t.
+            </p>
+          </AnimateIn>
 
-          <AnimateIn delay={0.3}>
-            <p className="mt-14 text-[15px] text-text-primary leading-[1.85] font-medium max-w-prose">
-              Deployment succeeds when institutional design matches
-              technological behavior.
+          <AnimateIn delay={0.15}>
+            <p className="mt-10 text-[15px] text-text-primary max-w-prose leading-[1.85] font-medium">
+              The format depends on the problem. The rigor doesn&apos;t.
             </p>
           </AnimateIn>
         </div>

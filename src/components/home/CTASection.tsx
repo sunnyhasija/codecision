@@ -9,14 +9,16 @@ export function CTASection() {
         <div className="border-t border-border/50 pt-24 md:pt-32">
           <AnimateIn>
             <h2 className="font-serif text-heading text-text-primary max-w-lg">
-              Start with a structured conversation.
+              Start with a conversation.
             </h2>
           </AnimateIn>
 
           <AnimateIn delay={0.1}>
             <p className="mt-6 text-[15px] text-text-secondary max-w-prose leading-[1.85]">
               If your organization is evaluating AI for operational decisions,
-              we can help assess fit, risk, and governance before you scale.
+              start with a conversation. 30 minutes. No pitch, no deck, just a
+              structured discussion about your environment and where AI does or
+              doesn&apos;t make sense.
             </p>
           </AnimateIn>
 

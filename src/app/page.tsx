@@ -8,7 +8,7 @@ import { CTASection } from "@/components/home/CTASection";
 export const metadata: Metadata = {
   title: "Codecision | AI Advisory for Decision Systems",
   description:
-    "Codecision advises organizations evaluating AI in supply chain and operational decision systems. Grounded in published research and large-scale behavioral evaluation.",
+    "Codecision is a research-backed advisory for organizations deploying AI in supply chain and operational decisions. Built on peer-reviewed research and large-scale behavioral evaluation.",
 };
 
 export default function Home() {

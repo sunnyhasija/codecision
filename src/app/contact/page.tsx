@@ -14,32 +14,40 @@ export default function ContactPage() {
     <div className="pt-40 pb-24 md:pt-48 md:pb-32">
       <div className="mx-auto max-w-content px-6 lg:px-8">
         <AnimateIn>
-          <p className="text-[10px] uppercase tracking-[0.25em] text-accent mb-8">
+          <p className="text-[10px] uppercase tracking-[0.25em] text-accent mb-10">
             Contact
           </p>
           <h1 className="font-serif text-display-sm text-text-primary max-w-lg">
-            Start with a conversation.
+            Start a conversation.
           </h1>
         </AnimateIn>
 
         <AnimateIn delay={0.1}>
           <p className="mt-8 text-[15px] text-text-secondary max-w-prose leading-[1.85]">
-            If your organization is evaluating AI in decision-intensive
-            environments, a structured conversation is the right first step.
+            If you&apos;re evaluating AI for supply chain or operational
+            decisions and want a structured, independent perspective, reach out.
           </p>
         </AnimateIn>
 
         <AnimateIn delay={0.15}>
-          <div className="mt-12 flex flex-wrap items-center gap-6">
+          <div className="mt-12">
             <Button href={CALENDLY_URL} external>
               Schedule a conversation
             </Button>
-            <a
-              href={`mailto:${CONTACT_EMAIL}`}
-              className="text-sm text-text-muted hover:text-text-secondary transition-colors duration-300"
-            >
-              Email us
-            </a>
+          </div>
+        </AnimateIn>
+
+        <AnimateIn delay={0.2}>
+          <div className="mt-12 pt-12 border-t border-border/50">
+            <p className="text-[15px] text-text-secondary">
+              Or email directly:{" "}
+              <a
+                href={`mailto:${CONTACT_EMAIL}`}
+                className="text-accent hover:text-accent-hover transition-colors duration-300"
+              >
+                {CONTACT_EMAIL}
+              </a>
+            </p>
           </div>
         </AnimateIn>
       </div>

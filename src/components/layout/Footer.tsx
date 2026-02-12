@@ -8,8 +8,8 @@ export function Footer() {
         <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-12">
           <div>
             <p className="font-serif text-lg text-text-primary">Codecision</p>
-            <p className="mt-3 text-sm text-text-muted max-w-xs leading-relaxed">
-              Research-backed advisory for AI-enabled decision systems.
+            <p className="mt-2 text-sm text-accent">
+              Research-grounded, not vendor-driven.
             </p>
           </div>
 
@@ -39,7 +39,7 @@ export function Footer() {
                 href={`mailto:${CONTACT_EMAIL}`}
                 className="text-sm text-text-muted hover:text-accent transition-colors duration-300"
               >
-                Email us
+                {CONTACT_EMAIL}
               </a>
             </div>
           </div>

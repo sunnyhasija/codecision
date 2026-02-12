@@ -6,7 +6,7 @@ export function ResearchSection() {
       <div className="mx-auto max-w-content px-6 lg:px-8">
         <div className="border-t border-border/50 pt-24 md:pt-32">
           <AnimateIn>
-            <p className="text-[10px] uppercase tracking-[0.25em] text-accent mb-10">
+            <p className="text-[10px] uppercase tracking-[0.25em] text-accent mb-12">
               The Work Behind the Advisory
             </p>
           </AnimateIn>
@@ -22,21 +22,21 @@ export function ResearchSection() {
                   SCM-Arena
                 </h3>
                 <p className="text-[15px] text-text-secondary leading-[1.85]">
-                  A behavioral benchmark that evaluates how large language
-                  models make decisions in supply chain environments. Not what
-                  they know, but how they behave: across 144 experimental
-                  conditions, 5 replications each, over 52-round episodes.
+                  We built a behavioral benchmark that tests how large language
+                  models actually make supply chain decisions. Not what they
+                  know, but how they behave. 144 experimental conditions, 5
+                  replications each, over 52-round episodes. The results show
+                  where autonomous operation is viable, where human oversight is
+                  required, and where deployment shouldn&apos;t proceed.
                 </p>
-                <p className="mt-4 text-[15px] text-text-secondary leading-[1.85]">
-                  It measures cost degradation, demand amplification, stability
-                  under stress, and failure modes. The results inform where
-                  autonomous operation is viable and where it is not.
+                <p className="mt-4 text-sm text-text-muted">
+                  Developed with Vincent Castillo at The Ohio State University.
                 </p>
                 <a
                   href="https://www.scm-arena.com"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 mt-6 text-sm text-accent hover:text-accent-hover transition-colors duration-300"
+                  className="inline-flex items-center gap-2 mt-4 text-sm text-accent hover:text-accent-hover transition-colors duration-300"
                 >
                   scm-arena.com
                   <svg
@@ -66,14 +66,15 @@ export function ResearchSection() {
                   AI Trust &amp; Organizational Acceptance
                 </h3>
                 <p className="text-[15px] text-text-secondary leading-[1.85]">
-                  Why does the gap between AI&apos;s potential and its actual
-                  adoption persist? A qualitative investigation of how
-                  organizations reconcile vendor claims with deployment
-                  realities, and the trust dynamics that determine whether AI
-                  systems are accepted, resisted, or misused.
+                  Peer-reviewed research on why the gap between AI&apos;s
+                  potential and its actual adoption persists, and the
+                  organizational dynamics that determine whether AI systems are
+                  accepted, resisted, or misused.
                 </p>
-                <p className="mt-6 text-xs text-text-muted">
-                  Journal of Business Logistics, 2022
+                <p className="mt-4 text-sm text-text-muted">
+                  Published in the <em>Journal of Business Logistics</em> (2022)
+                  with Terry Esper at Ohio State. Cited in subsequent JBL work
+                  on AI roadmaps for the field.
                 </p>
               </div>
             </AnimateIn>

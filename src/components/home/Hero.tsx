@@ -25,11 +25,10 @@ export function Hero() {
           transition={{ duration: 0.6, delay: 0.3 }}
           className="mt-10 text-base text-text-secondary max-w-prose leading-[1.85]"
         >
-          The failure is rarely capability. It is misalignment between task
-          structure, model behavior, and organizational context. Codecision
-          advises organizations evaluating AI in supply chain and operational
-          decision systems, grounded in published research and large-scale
-          behavioral evaluation.
+          Codecision is a research-backed advisory for organizations deploying
+          AI in supply chain and operational decisions. We evaluate how AI
+          actually behaves in your decision environment, not how it scores on
+          benchmarks.
         </motion.p>
 
         <motion.div
