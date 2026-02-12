@@ -6,24 +6,24 @@ import { CALENDLY_URL } from "@/lib/constants";
 export const metadata: Metadata = {
   title: "Services",
   description:
-    "Decision systems advisory, AI deployment strategy, and executive workshops for operational leaders.",
+    "Decision systems advisory, AI deployment strategy, and executive workshops. Built on behavioral research, not trend reports.",
 };
 
 const services = [
   {
     title: "Decision Systems Advisory",
     description:
-      "Structured evaluation of AI-supported workflows in procurement, planning, negotiation, and analytics contexts.",
+      "Structured evaluation of AI-supported workflows in procurement, planning, negotiation, and analytics. We assess how the AI actually behaves in your decision environment, not how it performs on generic benchmarks.",
   },
   {
     title: "AI Deployment Strategy",
     description:
-      "Assessment of fit before scale: where to automate, where to constrain, where to retain human control.",
+      "Assessment of fit before scale. Where to automate, where to constrain, where to retain human control. Informed by behavioral benchmarking across hundreds of experimental conditions.",
   },
   {
     title: "Executive Workshops",
     description:
-      "Focused sessions on behavioral risk, role asymmetry, and governance architecture in AI-enabled decisions.",
+      "Focused sessions for leadership teams on behavioral risk, role asymmetry, and governance architecture in AI-enabled decisions. Research-grounded, not vendor-driven.",
   },
 ];
 
@@ -32,24 +32,29 @@ export default function ServicesPage() {
     <div className="pt-40 pb-24 md:pt-48 md:pb-32">
       <div className="mx-auto max-w-content px-6 lg:px-8">
         <AnimateIn>
-          <p className="text-[11px] uppercase tracking-[0.2em] text-text-muted mb-8">
+          <p className="text-[11px] uppercase tracking-[0.2em] text-text-muted mb-4">
             Services
+          </p>
+          <p className="text-base text-text-secondary max-w-prose leading-[1.8]">
+            Codecision works with organizations at the point where AI capability
+            meets operational reality. Each engagement draws on published
+            research and empirical behavioral evaluation.
           </p>
         </AnimateIn>
 
-        <div className="space-y-16">
+        <div className="mt-16 space-y-0">
           {services.map((service, i) => (
             <AnimateIn key={service.title} delay={0.05 + i * 0.05}>
-              <div className="max-w-prose pb-16 border-b border-border last:border-b-0 last:pb-0">
-                <div className="flex items-baseline gap-5">
-                  <span className="text-xs text-text-muted font-mono tabular-nums">
+              <div className="py-12 border-t border-border">
+                <div className="flex items-baseline gap-6 max-w-prose">
+                  <span className="text-xs text-text-muted font-mono tabular-nums shrink-0">
                     {String(i + 1).padStart(2, "0")}
                   </span>
                   <div>
-                    <h2 className="text-lg font-semibold text-text-primary mb-3">
+                    <h2 className="text-base font-semibold text-text-primary mb-3">
                       {service.title}
                     </h2>
-                    <p className="text-base text-text-secondary leading-[1.8]">
+                    <p className="text-sm text-text-secondary leading-[1.8]">
                       {service.description}
                     </p>
                   </div>
@@ -59,7 +64,7 @@ export default function ServicesPage() {
           ))}
         </div>
 
-        <AnimateIn delay={0.25} className="mt-20">
+        <AnimateIn delay={0.25} className="mt-12">
           <Button href={CALENDLY_URL} external>
             Schedule a conversation
           </Button>
